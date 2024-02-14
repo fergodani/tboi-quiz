@@ -1,7 +1,12 @@
 import { item_list } from "./loadItems.js";
 
 $(".items").hide();
-item_list.forEach((item) => {
+const rebirth_list = item_list.filter((item) => {return item.dlc === "Rebirth"})
+const afterebirth_list = item_list.filter((item) => {return item.dlc === "Afterbirth"})
+const afterebirth_plus_list = item_list.filter((item) => {return item.dlc === "Afterbirth+"})
+const repentance_list = item_list.filter((item) => {return item.dlc === "Repentance"})
+
+function addItem(item) {
     var nuevoElemento = $("<div>");
     var toolTip = $("<span>").text(item.name) 
     toolTip.addClass("tooltip-text")
@@ -26,8 +31,24 @@ item_list.forEach((item) => {
             break;
     }
     nuevoElemento.append(toolTip);
-    $(".items").append(nuevoElemento);
-    
+    if (item.dlc === "Afterbirth+")
+        $(".Afterbirthplus").append(nuevoElemento);
+    else
+        $("." + item.dlc).append(nuevoElemento);
+}
+rebirth_list.forEach((item) => {
+    addItem(item)
+})
+
+afterebirth_list.forEach((item) => {
+    addItem(item)
+})
+
+afterebirth_plus_list.forEach((item) => {
+    addItem(item)
+})
+repentance_list.forEach((item) => {
+    addItem(item)
 })
 
 let isShowing = false

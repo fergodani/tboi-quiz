@@ -17,11 +17,23 @@ main {
 
 .items {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-direction: column;
     margin-left: 2em;
     margin-right: 2em;
     margin-top: 2em;
+    background-color: #333;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.items h2 {
+    color: #f3f3f3
+}
+
+.Rebirth, .Afterbirth, .Afterbirthplus, .Repentance {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 103px;
 }
 
 button {
@@ -109,8 +121,9 @@ input {
     font-family: 'Space Mono', monospace;
     visibility: hidden;
     width: 120px;
-    background-color: #333;
-    color: #f3f3f3;
+    background-color: #f3f3f3;
+    color: black;
+    font-weight: bold;
     text-align: center;
     border-radius: 6px;
     padding: 5px;
@@ -129,8 +142,12 @@ input {
     display: inline-block;
 }
 
-.items div:hover .tooltip-text {
+.items div div:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
+}
+
+.item {
+    margin: 8px;
 }
 
