@@ -1,5 +1,5 @@
 body {
-    font-family: 'Space Mono', monospace; 
+    font-family: 'Space Mono', monospace;
     color: white;
 }
 
@@ -26,7 +26,7 @@ button {
     border-radius: 10%;
     background-color: #333;
     color: #f3f3f3;
-    font-family: 'Space Mono', monospace; 
+    font-family: 'Space Mono', monospace;
 }
 
 #next {
@@ -41,7 +41,8 @@ button {
     text-align: center;
 }
 
-h2, h3 {
+h2,
+h3 {
     color: #333
 }
 
@@ -61,7 +62,7 @@ h2, h3 {
     background: white;
     color: #333;
     border-radius: 5%;
-    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 input {
@@ -76,16 +77,49 @@ input {
     background: #dee1e2;
     display: block;
     height: 36px;
+
     :hover {
         border-color: #ccc;
     }
-    :focus{
+
+    :focus {
         border-color: #9147ff;
         background: #fff;
     }
-    
+
 }
 
-#tick, #cross {
+#tick,
+#cross {
     display: none;
+}
+
+
+.tooltip-text {
+    font-family: 'Space Mono', monospace;
+    visibility: hidden;
+    width: 120px;
+    background-color: #333;
+    color: #f3f3f3;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    /* Posiciona el tooltip encima del elemento */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.items div {
+    position: relative;
+    display: inline-block;
+}
+
+.items div:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
 }

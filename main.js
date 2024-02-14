@@ -3,6 +3,8 @@ import { item_list } from "./loadItems.js";
 $(".items").hide();
 item_list.forEach((item) => {
     var nuevoElemento = $("<div>");
+    var toolTip = $("<span>").text(item.name) 
+    toolTip.addClass("tooltip-text")
     switch (item.dlc) {
         case "Rebirth":
             let zeros = ""
@@ -23,7 +25,9 @@ item_list.forEach((item) => {
             nuevoElemento.addClass("item rep-item rep" + item.id);
             break;
     }
+    nuevoElemento.append(toolTip);
     $(".items").append(nuevoElemento);
+    
 })
 
 let isShowing = false
@@ -102,4 +106,3 @@ function drawItem(item, location) {
     }
     $(location).after(nuevoElemento);
 }
-
