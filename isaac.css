@@ -222,7 +222,7 @@ footer .pg {
 }
 
 footer .pg img {
-    cursor: url(../images/speaker.png),auto;
+    cursor: url(./images/speaker.png),auto;
     vertical-align: bottom
 }
 
@@ -507,7 +507,7 @@ header .container .search input[type=text] {
     width: 220px;
     border: 0 solid rgba(0,0,0,0);
     padding: 0 30px 5px 10px;
-    background: url(../images/x.png) no-repeat right -20px center #fff;
+    background: url(./images/x.png) no-repeat right -20px center #fff;
     transition: background .4s ease-in-out;
     outline: none;
     font-family: "Open Sans",sans-serif
@@ -525,7 +525,7 @@ header .container .search .option-expander {
     width: 40px;
     height: 50px;
     display: inline-block;
-    background: url(../images/gear.png) #000;
+    background: url(./images/gear.png) #000;
     line-height: 50px;
     cursor: pointer;
     font-size: 48px;
@@ -1063,7 +1063,7 @@ header .navbar-swapper:hover {
     height: 100px;
     top: 0;
     right: 0;
-    cursor: url(../images/spirit-small.png),auto
+    cursor: url(./images/spirit-small.png),auto
 }
 
 #IlluminatiLink {
@@ -1133,7 +1133,7 @@ header .navbar-swapper:hover {
 }
 
 .dlc-tag,.plus-tag {
-    background-image: url("../images/dlc.png");
+    background-image: url("./images/dlc.png");
     background-repeat: no-repeat;
     width: 47px;
     height: 17px;
@@ -1258,7 +1258,7 @@ header .navbar-swapper:hover {
 }
 
 .dark .main {
-    background: url(../images/wild_oliva.png) top left fixed #373737
+    background: url(./images/wild_oliva.png) top left fixed #373737
 }
 
 .dark h1 {
@@ -1306,7 +1306,7 @@ header .navbar-swapper:hover {
 }
 
 .dark .calc,.dark .facts,.dark .babies {
-    background: url(../images/wild_oliva.png) top left fixed #373737;
+    background: url(./images/wild_oliva.png) top left fixed #373737;
     color: #f2ecde;
     box-shadow: 0px 0px 12px 0px #373737
 }
@@ -1388,7 +1388,7 @@ header .navbar-swapper:hover {
 }
 
 .items-container .vitem {
-    background: url(../images/item.png) top left no-repeat
+    background: url(./images/item.png) top left no-repeat
 }
 
 .items-container .vitem.itm1 {
@@ -2373,7 +2373,7 @@ header .navbar-swapper:hover {
 
 .vanillatrinket {
     height: 50px;
-    background: url(../images/trinket.png) top left no-repeat
+    background: url(./images/trinket.png) top left no-repeat
 }
 
 .vanillatrinket.junxx29 {
@@ -2548,7 +2548,7 @@ header .navbar-swapper:hover {
 
 .vanillacard {
     height: 50px;
-    background: url(../images/card.png) top left no-repeat;
+    background: url(./images/card.png) top left no-repeat;
     width: 34px
 }
 
@@ -2661,7 +2661,7 @@ header .navbar-swapper:hover {
 }
 
 .items-container .rebirth-item {
-    background: url("../images/rebirth-items-final.png") top left no-repeat;
+    background: url("./images/rebirth-items-final.png") top left no-repeat;
     width: 50px;
     height: 50px;
     image-rendering: pixelated
@@ -4006,7 +4006,7 @@ header .navbar-swapper:hover {
 .items-container .rebirth-item.r-itm278 {
     background-position: -15726px 0;
     width: 38px;
-    cursor: url(../images/spirit-small.png),auto
+    cursor: url(./images/spirit-small.png),auto
 }
 
 .items-container .rebirth-item.r-itm279 {
@@ -4332,7 +4332,7 @@ header .navbar-swapper:hover {
 }
 
 .rebirth-trinket {
-    background: url("../images/rebirth-trinket-finale.png") no-repeat top left;
+    background: url("./images/rebirth-trinket-finale.png") no-repeat top left;
     width: 50px;
     height: 50px;
     image-rendering: pixelated
@@ -4655,7 +4655,7 @@ header .navbar-swapper:hover {
 }
 
 .rebirth-card {
-    background: url("../images/ap-cards2.png") no-repeat top left;
+    background: url("./images/ap-cards2.png") no-repeat top left;
     image-rendering: pixelated
 }
 
@@ -5050,7 +5050,7 @@ header .navbar-swapper:hover {
 }
 
 .a-item {
-    background: url("../images/ab-items7.png") no-repeat top left;
+    background: url("./images/ab-items7.png") no-repeat top left;
     width: 50px;
     height: 50px;
     image-rendering: pixelated
@@ -5523,7 +5523,7 @@ header .navbar-swapper:hover {
 }
 
 .a-trink {
-    background: url("../images/rebirth-trinket-finale.png") no-repeat top left;
+    background: url("./images/rebirth-trinket-finale.png") no-repeat top left;
     width: 50px;
     height: 50px;
     image-rendering: pixelated
@@ -5670,7 +5670,7 @@ header .navbar-swapper:hover {
 }
 
 .ap-item {
-    background: url("../images/ap-items10.png") no-repeat top left;
+    background: url("./images/ap-items10.png") no-repeat top left;
     width: 50px;
     height: 50px;
     image-rendering: pixelated
@@ -6214,7 +6214,7 @@ header .navbar-swapper:hover {
 }
 
 .ap-trink {
-    background: url("../images/rebirth-trinket-finale.png") no-repeat top left;
+    background: url("./images/rebirth-trinket-finale.png") no-repeat top left;
     width: 50px;
     height: 50px;
     image-rendering: pixelated
@@ -6400,7 +6400,7 @@ header .navbar-swapper:hover {
 }
 
 .anb-item {
-    background: url("../images/anb-items.png") no-repeat top left;
+    background: url("./images/anb-items.png") no-repeat top left;
     width: 50px;
     height: 50px;
     image-rendering: pixelated
@@ -6833,7 +6833,7 @@ header .navbar-swapper:hover {
 }
 
 .anb-trink {
-    background: url("../images/anb-trinkets2.png") no-repeat top left;
+    background: url("./images/anb-trinkets2.png") no-repeat top left;
     width: 45px;
     height: 50px;
     image-rendering: pixelated
@@ -6972,7 +6972,7 @@ header .navbar-swapper:hover {
 }
 
 .rep-item {
-    background: url("../images/repentance-items2.png") no-repeat top left;
+    background: url("./images/repentance-items2.png") no-repeat top left;
     width: 50px;
     height: 50px;
     image-rendering: pixelated
@@ -7824,7 +7824,7 @@ header .navbar-swapper:hover {
 }
 
 .rep-trink {
-    background: url("../images/repentance-trinkets.png") no-repeat top left;
+    background: url("./images/repentance-trinkets.png") no-repeat top left;
     width: 50px;
     height: 50px;
     image-rendering: pixelated
@@ -8130,7 +8130,7 @@ header .navbar-swapper:hover {
 }
 
 .rep-card {
-    background: url("../images/repentance-cards_final.png") no-repeat top left;
+    background: url("./images/repentance-cards_final.png") no-repeat top left;
     width: 43px;
     height: 50px
 }
@@ -8280,7 +8280,7 @@ header .navbar-swapper:hover {
 }
 
 .reb-itm-new {
-    background: url("../images/repentance-rebirth-items.png") no-repeat top left;
+    background: url("./images/repentance-rebirth-items.png") no-repeat top left;
     width: 50px;
     height: 50px
 }
@@ -9632,7 +9632,7 @@ header .navbar-swapper:hover {
 .reb-itm-new.re-itm278 {
     background-position: -15745px 0;
     width: 38px;
-    cursor: url(../images/spirit-small.png),auto
+    cursor: url(./images/spirit-small.png),auto
 }
 
 .reb-itm-new.re-itm279 {
@@ -9959,7 +9959,7 @@ header .navbar-swapper:hover {
 }
 
 .ab-itm-new {
-    background: url("../images/repentance-ab-items.png") no-repeat top left;
+    background: url("./images/repentance-ab-items.png") no-repeat top left;
     width: 50px;
     height: 50px
 }
@@ -10430,7 +10430,7 @@ header .navbar-swapper:hover {
 }
 
 .ap-itm-new {
-    background: url("../images/repentance-ap-items.png") no-repeat top left;
+    background: url("./images/repentance-ap-items.png") no-repeat top left;
     width: 50px;
     height: 50px
 }
@@ -10967,7 +10967,7 @@ header .navbar-swapper:hover {
 }
 
 .bp-itm-new {
-    background: url("../images/repentance-booster-items.png") no-repeat top left;
+    background: url("./images/repentance-booster-items.png") no-repeat top left;
     width: 50px;
     height: 50px
 }
@@ -11175,7 +11175,7 @@ header .navbar-swapper:hover {
 }
 
 .trinket {
-    background: url("../images/repentance-rebirth-trinkets.png") no-repeat top left;
+    background: url("./images/repentance-rebirth-trinkets.png") no-repeat top left;
     width: 50px;
     height: 50px
 }
@@ -11875,7 +11875,7 @@ header .navbar-swapper:hover {
 }
 
 .angelroom h1 i {
-    background-image: url(../images/angeldoor.png);
+    background-image: url(./images/angeldoor.png);
     width: 98px;
     height: 88px;
     display: inline-block;
@@ -11922,7 +11922,7 @@ header .navbar-swapper:hover {
 .angelroom .angelguy {
     width: 279px;
     height: 257px;
-    background-image: url(../images/angel.png);
+    background-image: url(./images/angel.png);
     margin: 0 auto;
     float: right;
     position: relative
@@ -11932,7 +11932,7 @@ header .navbar-swapper:hover {
     display: none;
     width: 184px;
     height: 144px;
-    background-image: url(../images/godhead.png);
+    background-image: url(./images/godhead.png);
     -webkit-animation: floating 2s infinite ease-in-out alternate;
     -moz-animation: floating 2s infinite ease-in-out alternate;
     animation: floating 2s infinite ease-in-out alternate;
@@ -12111,7 +12111,7 @@ header .navbar-swapper:hover {
 }
 
 .baby-container .babyimg {
-    background: url("../images/coop-babies.png") no-repeat top left;
+    background: url("./images/coop-babies.png") no-repeat top left;
     width: 512px;
     height: 64px
 }
@@ -13489,7 +13489,7 @@ header .navbar-swapper:hover {
 }
 
 .devilroom h1 i {
-    background-image: url(../images/devildoor.png);
+    background-image: url(./images/devildoor.png);
     width: 98px;
     height: 86px;
     display: inline-block;
@@ -13522,11 +13522,11 @@ header .navbar-swapper:hover {
 
 .devilroom ul {
     list-style: square;
-    padding-left: 35px
+    padding-left: 35px;
 }
 
 .devilroom ul li {
-    margin-bottom: 16px
+    margin-bottom: 16px;
 }
 
 .devilroom .stan {
@@ -13534,7 +13534,7 @@ header .navbar-swapper:hover {
     width: 296px;
     height: 272px;
     vertical-align: middle;
-    background-image: url(../images/satan.png);
+    background-image: url(./images/satan.png);
     margin: 0 auto
 }
 
@@ -14068,7 +14068,7 @@ header .navbar-swapper:hover {
 }
 
 .a-synergies .pedestals>div {
-    background: url(../images/pedestal.png) no-repeat bottom center;
+    background: url(./images/pedestal.png) no-repeat bottom center;
     width: 96px;
     height: 145px;
     margin: 0 32px
@@ -14103,7 +14103,7 @@ header .navbar-swapper:hover {
 
 .a-synergies .sprite {
     cursor: pointer;
-    background: url(../images/ab-synergies-items.png) no-repeat top left;
+    background: url(./images/ab-synergies-items.png) no-repeat top left;
     position: relative;
     width: 96px;
     height: 96px;
@@ -14329,7 +14329,7 @@ header .navbar-swapper:hover {
 }
 
 .transformations .sprite {
-    background: url(../images/transformations2.png) no-repeat top left;
+    background: url(./images/transformations2.png) no-repeat top left;
     width: 84px;
     height: 99px;
     margin: 0 auto;
@@ -14449,7 +14449,7 @@ header .navbar-swapper:hover {
 }
 
 .transformations .trans-box .r-item278 a {
-    cursor: url(../images/spirit-small.png),auto
+    cursor: url(./images/spirit-small.png),auto
 }
 
 .hovertip {
