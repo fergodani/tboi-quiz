@@ -45,6 +45,7 @@ $(document).ready(function(){
     $("#submit").click(function(){
         let input_text = $("#item_name").val();
         let real_name = $("<h3>").text(item_selected.name)
+        real_name.css("font-weight", "bold")
         $("#quiz h2").after(real_name)
         if (input_text.toLowerCase() === item_selected.name.toLowerCase()) {
             $("#tick").show();

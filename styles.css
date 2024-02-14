@@ -1,11 +1,18 @@
 body {
     font-family: 'Space Mono', monospace;
     color: white;
+    background-image: url('./images/background.png'); /* Ruta de la imagen de fondo */
+    background-size:cover;
+    background-position: center;
 }
 
 main {
     padding-left: 2em;
     padding-right: 2em;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .items {
@@ -39,6 +46,9 @@ button {
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color: white;
+    max-width: 300px;
+    border-radius: 10px;
 }
 
 h2,
@@ -123,3 +133,4 @@ input {
     visibility: visible;
     opacity: 1;
 }
+
