@@ -16,15 +16,26 @@
 <body>
     <header><h1>The Binding of Isaac Quiz</h1></header>
     <main>
+        <h2>Selecciona el quiz</h2>
+        <button type="button" id="quiz-name">Escribe el nombre</button>
+        <button type="button" id="quiz-image">Elegir imagen</button>
+        <button type="button" id="go-back">Volver</button>
         <section id="quiz">
             <h2>Introduce el nombre del item:</h2>
-            <img id="tick" id="tick" src="./images/tick.png"/>
-            <img id="cross" id="cross" src="./images/cross.png" />
+            <img class="tick" src="./images/tick.png"/>
+            <img class="cross" src="./images/cross.png" />
             <input id="item_name" tipe="text" placeholder="Nombre del item..."/>
             <button type="button" id="submit">Aceptar</button>
             <button type="button" id="next">Siguiente</button>
             <div id="words">
             </div>
+        </section>
+        <section id="quiz-images">
+            <h2>Selecciona el item correcto:</h2>
+            <img class="tick" src="./images/tick.png"/>
+            <img class="cross" src="./images/cross.png" />
+            <div id="images"></div>
+            <button type="button" id="next-images">Siguiente</button>
         </section>
         <button type="button" id="mostrar-btn">Ver items</button>
     </main>

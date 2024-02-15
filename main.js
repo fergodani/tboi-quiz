@@ -69,19 +69,19 @@ $(document).ready(function(){
         real_name.css("font-weight", "bold")
         $("#quiz h2").after(real_name)
         if (input_text.toLowerCase() === item_selected.name.toLowerCase()) {
-            $("#tick").show();
-            $("#cross").hide();
+            $("#quiz .tick").show();
+            $("#quiz .cross").hide();
         } else {
-            $("#tick").hide();
-            $("#cross").show();
+            $("#quiz .tick").hide();
+            $("#quiz .cross").show();
         }
         $("#next").show();
         $("#submit").hide();
     });
 
     $("#next").click(function(){
-        $("#tick").hide();
-        $("#cross").hide();
+        $(".tick").hide();
+        $(".cross").hide();
         $("#next").hide();
         $("#submit").show();
         $(".item").first().remove();
@@ -89,14 +89,78 @@ $(document).ready(function(){
         $("#item_name").val('');
         nextItem()
     });
+
+    $("#next-images").click(function(){
+        $("#quiz-images .tick").hide();
+        $("#quiz-images .cross").hide();
+        $("#next-images").hide();
+        $("#images").empty();
+        $("h3").remove();
+        $("#item_name").val('');
+        nextItems()
+        $("#quiz-images a").click(function(){
+            console.log($(this).attr("id"))
+            if ($(this).attr("id") === item_selected.id) {
+                $("#quiz-images .tick").show();
+                $("#quiz-images .cross").hide();
+            } else {
+                $("#quiz-images .tick").hide();
+                $("#quiz-images .cross").show();
+            }
+            $("#next-images").show();
+        })
+    });
+
+    $("#quiz-name").click(function(){
+        $("#go-back").show()
+        $("#quiz").css("display", "flex")
+        $("#quiz-name").css("display", "none")
+        $("#quiz-image").css("display", "none")
+        $("main > h2").css("display", "none")
+        nextItem()
+    });
+
+    $("#quiz-image").click(function(){
+        $("#go-back").show()
+        $("#quiz-images").css("display", "flex")
+        $("#quiz-name").css("display", "none")
+        $("#quiz-image").css("display", "none")
+        $("main > h2").css("display", "none") 
+        nextItems()
+        $("#quiz-images a").click(function(){
+            console.log($(this).attr("id"))
+            if ($(this).attr("id") === item_selected.id) {
+                $("#quiz-images .tick").show();
+                $("#quiz-images .cross").hide();
+            } else {
+                $("#quiz-images .tick").hide();
+                $("#quiz-images .cross").show();
+            }
+            $("#next-images").show();
+        })
+    });
     
+    $("#go-back").click(function() {
+        $("#go-back").hide()
+        $("#quiz").css("display", "none")
+        $("#quiz h3").remove()
+        $("#quiz div").remove()
+        $("#quiz-images").css("display", "none")
+        $("#images").empty()
+        $("#quiz-images h3").remove()
+        $("#quiz-name").show()
+        $("#quiz-image").show()
+        $(".tick").hide()
+        $(".cross").hide()
+        $("main > h2").css("display", "none")
+    })
 });
 
 // Quiz
 
 let item_index
 let item_selected
-nextItem()
+
 
 function nextItem() {
     item_index = Math.floor(Math.random() * item_list.length) + 1;
@@ -128,3 +192,70 @@ function drawItem(item, location) {
     }
     $(location).after(nuevoElemento);
 }
+
+function nextItems() {
+    item_index = Math.floor(Math.random() * item_list.length) + 1;
+    item_selected = item_list[item_index]
+    let real_name = $("<h3>").text(item_selected.name)
+    real_name.css("font-weight", "bold")
+    $("#quiz-images h2").after(real_name)
+    let index = 0
+    let index_aux = 0;
+    let item;
+    let items = []
+    items.push(item_selected)
+    
+    for (let i = 0; i < 3; i++) {
+        index = Math.floor(Math.random() * item_list.length) + 1;
+        while (containsId(items, index))
+            index = Math.floor(Math.random() * item_list.length) + 1;
+        index_aux = index
+        item = item_list[index]
+        items.push(item)
+        //drawImage(item, "#images")
+    }
+    items.sort(comparacionAleatoria)
+    items.forEach((item) => {
+        drawImage(item, "#images")
+    })
+}
+
+function containsId(items, id) {
+    let contain = false
+    items.forEach((item) => {
+        if (item.id == id)
+            contain = true
+    })
+    return contain
+}
+
+function drawImage(item, location) {
+    var nuevoElemento = $("<a>");
+    nuevoElemento.attr("id", item.id)
+    nuevoElemento.addClass("image")
+    switch (item.dlc) {
+        case "Rebirth":
+            let zeros = ""
+            let id_string = item.id.toString()
+            if (id_string.length === 1)
+                zeros = "00"
+            else if (id_string.length === 2)
+                zeros = "0"
+            nuevoElemento.addClass("item reb-itm-new re-itm" + zeros + item.id);
+            break;
+        case "Afterbirth":
+            nuevoElemento.addClass("ab-itm-new item abn-itm" + item.id);
+            break;
+        case "Afterbirth+":
+            nuevoElemento.addClass("ap-itm-new item apn-itm" + item.id);
+            break;
+        case "Repentance":
+            nuevoElemento.addClass("item rep-item rep" + item.id);
+            break;
+    }
+    $(location).append(nuevoElemento);
+}
+
+function comparacionAleatoria() {
+    return Math.random() - 0.5;
+  }

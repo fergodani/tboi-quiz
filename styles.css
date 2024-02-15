@@ -54,19 +54,23 @@ button {
     padding-right: 1em;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
-    border-radius: 10%;
+    border-radius: 10px;
     background-color: #333;
     color: #f3f3f3;
     font-size: large;
     font-family: IsaacFont, Arial, sans-serif;
 }
 
-#next {
+#next, #next-images, #go-back {
     display: none;
 }
 
-#quiz {
-    display: flex;
+#next-images, #go-back, #next, #submit {
+    margin-bottom: 1em;
+}
+
+#quiz, #quiz-images {
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -80,9 +84,33 @@ button {
     overflow: hidden;*/
 }
 
+#quiz-images a {
+    cursor: pointer;
+    transition: transform 0.3s; 
+}
+
+#quiz-images a:hover {
+    transform: scale(1.1);
+}
+
+#images {
+    display: grid;
+    grid-template-rows: auto auto; /* Dos filas de altura automática */
+    grid-template-columns: auto auto; /* Dos columnas de ancho automático */
+    gap: 10px;
+}
+
+#quiz h2, #quiz h3, #quiz-images h2, #quiz-images h3 {
+    color: #333
+}
+
+#quiz-images {
+    display: none;
+}
+
 h2,
 h3 {
-    color: #333;
+    color: #f3f3f3;
     font-family: IsaacFont, Arial, sans-serif;
 }
 
@@ -130,8 +158,8 @@ input {
 
 }
 
-#tick,
-#cross {
+.tick,
+.cross {
     display: none;
 }
 
