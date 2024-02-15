@@ -224,10 +224,7 @@ footer .pg img {
 header {
     min-width: 315px;
     width: 100%;
-    z-index: 9001;
-    -moz-box-shadow: 1px 3px 4px 0 rgba(0,0,0,.4);
-    -webkit-box-shadow: 1px 3px 4px 0 rgba(0,0,0,.4);
-    box-shadow: 1px 3px 4px 0 rgba(0,0,0,.4)
+    padding-top: 1em;
 }
 
 header .container {

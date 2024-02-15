@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isaac - Quiz</title>
+    <link rel="icon" href="./images/favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="isaac.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap" rel="stylesheet">
@@ -17,16 +18,16 @@
     <header><h1>The Binding of Isaac Quiz</h1></header>
     <main>
         <h2>Selecciona el quiz</h2>
-        <button type="button" id="quiz-name">Escribe el nombre</button>
-        <button type="button" id="quiz-image">Elegir imagen</button>
-        <button type="button" id="go-back">Volver</button>
+        <a id="quiz-name">Escribe el nombre</a>
+        <a id="quiz-image">Elegir imagen</a>
+        <a id="go-back">Volver</a>
         <section id="quiz">
             <h2>Introduce el nombre del item:</h2>
             <img class="tick" src="./images/tick.png"/>
             <img class="cross" src="./images/cross.png" />
             <input id="item_name" tipe="text" placeholder="Nombre del item..."/>
-            <button type="button" id="submit">Aceptar</button>
-            <button type="button" id="next">Siguiente</button>
+            <a id="submit">Aceptar</a>
+            <a id="next">Siguiente</a>
             <div id="words">
             </div>
         </section>
@@ -35,19 +36,21 @@
             <img class="tick" src="./images/tick.png"/>
             <img class="cross" src="./images/cross.png" />
             <div id="images"></div>
-            <button type="button" id="next-images">Siguiente</button>
+            <a id="next-images">Siguiente</a>
         </section>
-        <button type="button" id="mostrar-btn">Ver items</button>
+        <a id="mostrar-btn">Ver items</a>
+        <div class="items">
+            <h2>Rebirth</h2>
+            <div class="Rebirth"></div>
+            <hr>
+            <h2>Afterbirth</h2>
+            <div class="Afterbirth"></div>
+            <h2>Afterbirth+</h2>
+            <div class="Afterbirthplus"></div>
+            <h2>Repentance</h2>
+            <div class="Repentance"></div>
+        </div>
     </main>
-    <div class="items">
-        <h2>Rebirth</h2>
-        <div class="Rebirth"></div>
-        <h2>Afterbirth</h2>
-        <div class="Afterbirth"></div>
-        <h2>Afterbirth+</h2>
-        <div class="Afterbirthplus"></div>
-        <h2>Repentance</h2>
-        <div class="Repentance"></div>
-    </div>
+    
 </body>
 </html>

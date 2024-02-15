@@ -91,14 +91,14 @@ $(document).ready(function(){
     });
 
     $("#next-images").click(function(){
-        $("#quiz-images .tick").hide();
-        $("#quiz-images .cross").hide();
+        $(".tick").hide();
+        $(".cross").hide();
         $("#next-images").hide();
         $("#images").empty();
         $("h3").remove();
         $("#item_name").val('');
         nextItems()
-        $("#quiz-images a").click(function(){
+        $("#images a").click(function(){
             console.log($(this).attr("id"))
             if ($(this).attr("id") === item_selected.id) {
                 $("#quiz-images .tick").show();
@@ -127,7 +127,7 @@ $(document).ready(function(){
         $("#quiz-image").css("display", "none")
         $("main > h2").css("display", "none") 
         nextItems()
-        $("#quiz-images a").click(function(){
+        $("#images a").click(function(){
             console.log($(this).attr("id"))
             if ($(this).attr("id") === item_selected.id) {
                 $("#quiz-images .tick").show();

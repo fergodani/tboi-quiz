@@ -8,60 +8,102 @@
     src: url('./fonts/upheavtt.ttf') format('truetype'); 
 }
 
+@keyframes planetariumBackground {
+    from { background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%; }
+    to { background-position: -7200px 4800px, -6000px 4000px, -4800px 3200px, -3600px 2400px, -2400px 1600px, -1200px 800px; }
+    }
+
 
 body {
     /*font-family: 'Space Mono', monospace;*/
     font-family: IsaacFont, Arial, sans-serif;
     color: white;
-    background-image: url('./images/background.png'); /* Ruta de la imagen de fondo */
-    background-size:cover;
-    background-position: center;
+    background-image: url(https://foursouls.com/wp-content/uploads/2021/07/FourSoulsBackgroundStarLayer05.png), url(https://foursouls.com/wp-content/uploads/2021/07/FourSoulsBackgroundStarLayer04.png), url(https://foursouls.com/wp-content/uploads/2021/07/FourSoulsBackgroundStarLayer03.png), url(https://foursouls.com/wp-content/uploads/2021/07/FourSoulsBackgroundStarLayer02.png), url(https://foursouls.com/wp-content/uploads/2021/07/FourSoulsBackgroundStarLayer01.png), url(https://foursouls.com/wp-content/uploads/2021/07/FourSoulsBackground.png);
+    animation: planetariumBackground 120s linear infinite;
+    background-size: 600px 400px,600px 400px,600px 400px,600px 400px,600px 400px,1200px 800px;
 }
 
 main {
     padding-left: 2em;
     padding-right: 2em;
-    justify-content: center;
+    max-width: 1024px;
+    min-height: 900px;
+    margin-right: auto;
+    margin-left: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-image-source: url(https://foursouls.com/wp-content/uploads/2021/08/FourSoulsPageBorderV5.png);
+    border-image-width: 156px 104px;
+    border-image-repeat: stretch repeat;
+    border-image-slice: 156 104 156 fill;
+    padding: 50px 128px 124px 128px;
+    box-sizing: border-box;
+    overflow: hidden;
+
 }
 
 .items {
     display: flex;
     flex-direction: column;
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 2em;
-    background-color: #333;
+    background-color: #ceb4a3;
     padding: 1em;
     border-radius: 10px;
+    border: solid thick #30221d;
 }
 
 .items h2 {
-    color: #f3f3f3
+    color: #333
 }
 
 .Rebirth, .Afterbirth, .Afterbirthplus, .Repentance {
     display: flex;
     flex-wrap: wrap;
     gap: 103px;
+    border-bottom: 2px solid #333;
 }
 
 button {
+    cursor: pointer;
     margin-top: 2em;
     padding-left: 1em;
     padding-right: 1em;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
-    border-radius: 10px;
-    background-color: #333;
-    color: #f3f3f3;
+    width: 200px; /* Ancho del botón */
+    height: auto;
+    background-image: url(./images/buttonImage.png);
+    background-size: cover; 
+    border: none;
+    color: #333;
     font-size: large;
     font-family: IsaacFont, Arial, sans-serif;
 }
 
-#next, #next-images, #go-back {
+main > a, #quiz > a, #quiz-images > a {
+    background-image: url(https://foursouls.com/wp-content/uploads/2021/07/PreviousLabel.png);
+    color: #333;
+    font-size: large;
+    padding: 1% 2% 2% 2%;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+}
+
+#next-images, #go-back, #quiz #next {
     display: none;
 }
 
@@ -75,13 +117,10 @@ button {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: white;
+    background-color: #ceb4a3;
+    border: solid thick #30221d;
     max-width: 300px;
     border-radius: 10px;
-   /* background-image: url('./images/postit.png');
-    background-size: cover; 
-    background-position: center;
-    overflow: hidden;*/
 }
 
 #quiz-images a {
@@ -98,6 +137,7 @@ button {
     grid-template-rows: auto auto; /* Dos filas de altura automática */
     grid-template-columns: auto auto; /* Dos columnas de ancho automático */
     gap: 10px;
+    margin-bottom: 1em;
 }
 
 #quiz h2, #quiz h3, #quiz-images h2, #quiz-images h3 {
@@ -198,11 +238,14 @@ input {
     margin: 8px;
 }
 
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
 
-    body {
-      background-color: black;
-      background-image: none;
+   
+
+    main {
+        padding: 90px 20px 144px 20px;
+        border-image-width: 156px 0px;
+        min-height: 500px;
     }
   }
 
