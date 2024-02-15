@@ -6,6 +6,10 @@ const afterebirth_list = item_list.filter((item) => {return item.dlc === "Afterb
 const afterebirth_plus_list = item_list.filter((item) => {return item.dlc === "Afterbirth+"})
 const repentance_list = item_list.filter((item) => {return item.dlc === "Repentance"})
 console.log("Total items: " + item_list.length)
+$("#rebirth-title").text("Rebirth (" + rebirth_list.length + ")")
+$("#afterbirth-title").text("Rebirth (" + afterebirth_list.length + ")")
+$("#afterbirthplus-title").text("Rebirth (" + afterebirth_plus_list.length + ")")
+$("#repentance-title").text("Rebirth (" + repentance_list.length + ")")
 function addItem(item) {
     var nuevoElemento = $("<div>");
     var toolTip = $("<span>").text(item.name) 
@@ -54,7 +58,7 @@ repentance_list.forEach((item) => {
 let isShowing = false
 $(document).ready(function(){
 
-    $("#item_name").on("keypress", function(event) {
+    $(document).keypress(function(event) {
         if (event.which === 13 && $("#submit").is(":visible")) {
             $("#submit").click();
         } else if (event.which === 13 && $("#submit").is(":hidden")) {
@@ -72,10 +76,14 @@ $(document).ready(function(){
     });
 
     $("#submit").click(function(){
+        $("#item_name").hide();
         let input_text = $("#item_name").val();
         let real_name = $("<h3>").text(item_selected.name)
+        let pickup = $("<p>").text(item_selected.pickup)
+        pickup.attr("id", "pickup")
         real_name.css("font-weight", "bold")
         $("#quiz h2").after(real_name)
+        real_name.after(pickup)
         if (input_text.toLowerCase() === item_selected.name.toLowerCase()) {
             $("#quiz .tick").show();
             $("#quiz .cross").hide();
@@ -93,8 +101,11 @@ $(document).ready(function(){
         $("#next").hide();
         $("#submit").show();
         $(".item").first().remove();
+        $("#pickup").remove();
         $("h3").remove();
         $("#item_name").val('');
+        $("#item_name").show();
+        $("#item_name").focus();
         nextItem()
     });
 
@@ -156,6 +167,7 @@ $(document).ready(function(){
         $("#quiz-images").css("display", "none")
         $("#images").empty()
         $("#quiz-images h3").remove()
+        $("#pickup").remove()
         $("#quiz-name").show()
         $("#quiz-image").show()
         $(".tick").hide()

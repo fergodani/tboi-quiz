@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es ">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,37 +17,36 @@
 <body>
     <header><h1>The Binding of Isaac Quiz</h1></header>
     <main>
-        <h2>Selecciona el quiz</h2>
-        <a id="quiz-name">Escribe el nombre</a>
-        <a id="quiz-image">Elegir imagen</a>
-        <a id="go-back">Volver</a>
+        <h2>Select the quiz</h2>
+        <a id="quiz-name">Type the item name</a>
+        <a id="quiz-image">Choose the correct image</a>
+        <a id="go-back">Go back</a>
         <section id="quiz">
-            <h2>Introduce el nombre del item:</h2>
-            <input id="item_name" tipe="text" placeholder="Nombre del item..."/>
-            <a id="submit">Aceptar</a>
+            <h2>Type the item name:</h2>
+            <input id="item_name" tipe="text" placeholder="Item name..."/>
+            <a id="submit">OK</a>
             <img class="tick" src="./images/tickPix.png"/>
             <img class="cross" src="./images/crossPix.png" />
-            <a id="next">Siguiente</a>
+            <a id="next">Next</a>
             <div id="words">
             </div>
         </section>
         <section id="quiz-images">
-            <h2>Selecciona el item correcto:</h2>
+            <h2>Select the correct item:</h2>
             <div id="images"></div>
             <img class="tick" src="./images/tickPix.png"/>
             <img class="cross" src="./images/crossPix.png" />
-            <a id="next-images">Siguiente</a>
+            <a id="next-images">Next</a>
         </section>
-        <a id="mostrar-btn">Ver items</a>
+        <a id="mostrar-btn">Show items</a>
         <div class="items">
-            <h2>Rebirth</h2>
+            <h2 id="rebirth-title">Rebirth</h2>
             <div class="Rebirth"></div>
-            <hr>
-            <h2>Afterbirth</h2>
+            <h2 id="afterbirth-title">Afterbirth</h2>
             <div class="Afterbirth"></div>
-            <h2>Afterbirth+</h2>
+            <h2 id="afterbirthplus-title">Afterbirth+</h2>
             <div class="Afterbirthplus"></div>
-            <h2>Repentance</h2>
+            <h2 id="repentance-title">Repentance</h2>
             <div class="Repentance"></div>
         </div>
     </main>
