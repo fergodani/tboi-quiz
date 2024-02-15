@@ -1,5 +1,17 @@
+@font-face {
+    font-family: IsaacFont;
+    src: url('./fonts/IsaacGame.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: IsaacFont2;
+    src: url('./fonts/upheavtt.ttf') format('truetype'); 
+}
+
+
 body {
-    font-family: 'Space Mono', monospace;
+    /*font-family: 'Space Mono', monospace;*/
+    font-family: IsaacFont, Arial, sans-serif;
     color: white;
     background-image: url('./images/background.png'); /* Ruta de la imagen de fondo */
     background-size:cover;
@@ -45,7 +57,8 @@ button {
     border-radius: 10%;
     background-color: #333;
     color: #f3f3f3;
-    font-family: 'Space Mono', monospace;
+    font-size: large;
+    font-family: IsaacFont, Arial, sans-serif;
 }
 
 #next {
@@ -61,11 +74,16 @@ button {
     background-color: white;
     max-width: 300px;
     border-radius: 10px;
+   /* background-image: url('./images/postit.png');
+    background-size: cover; 
+    background-position: center;
+    overflow: hidden;*/
 }
 
 h2,
 h3 {
-    color: #333
+    color: #333;
+    font-family: IsaacFont, Arial, sans-serif;
 }
 
 #words {
@@ -88,6 +106,7 @@ h3 {
 }
 
 input {
+    font-family: IsaacFont2, Arial, sans-serif;
     margin-top: 1em;
     font-size: 14px;
     border-radius: 6px;
@@ -118,7 +137,7 @@ input {
 
 
 .tooltip-text {
-    font-family: 'Space Mono', monospace;
+    font-family: IsaacFont, Arial, sans-serif;
     visibility: hidden;
     width: 120px;
     background-color: #f3f3f3;
