@@ -5,7 +5,7 @@ const rebirth_list = item_list.filter((item) => {return item.dlc === "Rebirth"})
 const afterebirth_list = item_list.filter((item) => {return item.dlc === "Afterbirth"})
 const afterebirth_plus_list = item_list.filter((item) => {return item.dlc === "Afterbirth+"})
 const repentance_list = item_list.filter((item) => {return item.dlc === "Repentance"})
-
+console.log("Total items: " + item_list.length)
 function addItem(item) {
     var nuevoElemento = $("<div>");
     var toolTip = $("<span>").text(item.name) 
@@ -53,6 +53,14 @@ repentance_list.forEach((item) => {
 
 let isShowing = false
 $(document).ready(function(){
+
+    $("#item_name").on("keypress", function(event) {
+        if (event.which === 13 && $("#submit").is(":visible")) {
+            $("#submit").click();
+        } else if (event.which === 13 && $("#submit").is(":hidden")) {
+            $("#next").click();
+        }
+    });
 
     $("#mostrar-btn").click(function(){
         if (isShowing) {
@@ -163,8 +171,9 @@ let item_selected
 
 
 function nextItem() {
-    item_index = Math.floor(Math.random() * item_list.length) + 1;
+    item_index = Math.floor(Math.random() * item_list.length);
     item_selected = item_list[item_index]
+    console.log(item_index)
     drawItem(item_selected, "#quiz h2")
 }
 
@@ -194,7 +203,7 @@ function drawItem(item, location) {
 }
 
 function nextItems() {
-    item_index = Math.floor(Math.random() * item_list.length) + 1;
+    item_index = Math.floor(Math.random() * item_list.length);
     item_selected = item_list[item_index]
     let real_name = $("<h3>").text(item_selected.name)
     real_name.css("font-weight", "bold")
