@@ -137,8 +137,8 @@ h1 {
 }
 
 footer {
-    background: #343434;
-    color: #f2ecde
+    color: #f2ecde;
+    text-align: center;
 }
 
 footer a {

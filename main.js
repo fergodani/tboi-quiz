@@ -242,19 +242,18 @@ function nextItems() {
     real_name.css("font-weight", "bold")
     $("#quiz-images h2").after(real_name)
     let index = 0
-    let index_aux = 0;
+    let index_aux = item_selected.id;
     let item;
     let items = []
     items.push(item_selected)
     
     for (let i = 0; i < 3; i++) {
-        index = Math.floor(Math.random() * item_list.length) + 1;
-        while (containsId(items, index))
-            index = Math.floor(Math.random() * item_list.length) + 1;
+        index = Math.floor(Math.random() * item_list.length);
+        while (index == Number(index_aux))
+            index = Math.floor(Math.random() * item_list.length);
         index_aux = index
         item = item_list[index]
         items.push(item)
-        //drawImage(item, "#images")
     }
     items.sort(comparacionAleatoria)
     items.forEach((item) => {
