@@ -1,17 +1,22 @@
 @font-face {
     font-family: IsaacFont;
-    src: url('./fonts/IsaacGame.ttf') format('truetype'); 
+    src: url('./fonts/IsaacGame.ttf') format('truetype');
 }
 
 @font-face {
     font-family: IsaacFont2;
-    src: url('./fonts/upheavtt.ttf') format('truetype'); 
+    src: url('./fonts/upheavtt.ttf') format('truetype');
 }
 
 @keyframes planetariumBackground {
-    from { background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%; }
-    to { background-position: -7200px 4800px, -6000px 4000px, -4800px 3200px, -3600px 2400px, -2400px 1600px, -1200px 800px; }
+    from {
+        background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
     }
+
+    to {
+        background-position: -7200px 4800px, -6000px 4000px, -4800px 3200px, -3600px 2400px, -2400px 1600px, -1200px 800px;
+    }
+}
 
 body {
     /*font-family: 'Space Mono', monospace;*/
@@ -19,7 +24,7 @@ body {
     color: white;
     background-image: url(https://foursouls.com/wp-content/uploads/2021/07/FourSoulsBackgroundStarLayer05.png), url(https://foursouls.com/wp-content/uploads/2021/07/FourSoulsBackgroundStarLayer04.png), url(https://foursouls.com/wp-content/uploads/2021/07/FourSoulsBackgroundStarLayer03.png), url(https://foursouls.com/wp-content/uploads/2021/07/FourSoulsBackgroundStarLayer02.png), url(https://foursouls.com/wp-content/uploads/2021/07/FourSoulsBackgroundStarLayer01.png), url(https://foursouls.com/wp-content/uploads/2021/07/FourSoulsBackground.png);
     animation: planetariumBackground 120s linear infinite;
-    background-size: 600px 400px,600px 400px,600px 400px,600px 400px,600px 400px,1200px 800px;
+    background-size: 600px 400px, 600px 400px, 600px 400px, 600px 400px, 600px 400px, 1200px 800px;
 }
 
 main {
@@ -41,6 +46,17 @@ main {
 
 }
 
+main>h2 {
+    text-align: center;
+    width: 500px;
+    height: 58px;
+    background: url(/images/title.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #333;
+    line-height: 50px;
+}
+
 .items {
     display: flex;
     flex-direction: column;
@@ -57,13 +73,16 @@ main {
     color: #333
 }
 
-h3 + p {
+h3+p {
     color: #333;
     padding: 0;
     margin: 0;
 }
 
-.Rebirth, .Afterbirth, .Afterbirthplus, .Repentance {
+.Rebirth,
+.Afterbirth,
+.Afterbirthplus,
+.Repentance {
     display: flex;
     flex-wrap: wrap;
     gap: 103px;
@@ -77,17 +96,20 @@ button {
     padding-right: 1em;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
-    width: 200px; /* Ancho del botón */
+    width: 200px;
+    /* Ancho del botón */
     height: auto;
     background-image: url(./images/buttonImage.png);
-    background-size: cover; 
+    background-size: cover;
     border: none;
     color: #333;
     font-size: large;
     font-family: IsaacFont, Arial, sans-serif;
 }
 
-main > a, #quiz > a, #quiz-images > a {
+main>a,
+#quiz>a,
+#quiz-images>a {
     background-image: url(https://foursouls.com/wp-content/uploads/2021/07/PreviousLabel.png);
     color: #333;
     font-size: large;
@@ -107,15 +129,21 @@ main > a, #quiz > a, #quiz-images > a {
     padding-bottom: 1.2em;
 }
 
-#next-images, #go-back, #quiz #next {
+#next-images,
+#go-back,
+#quiz #next {
     display: none;
 }
 
-#next-images, #go-back, #next, #submit {
+#next-images,
+#go-back,
+#next,
+#submit {
     margin-bottom: 1em;
 }
 
-#quiz, #quiz-images {
+#quiz,
+#quiz-images {
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -129,7 +157,7 @@ main > a, #quiz > a, #quiz-images > a {
 
 #quiz-images a {
     cursor: pointer;
-    transition: transform 0.3s; 
+    transition: transform 0.3s;
 }
 
 #quiz-images a:hover {
@@ -138,13 +166,18 @@ main > a, #quiz > a, #quiz-images > a {
 
 #images {
     display: grid;
-    grid-template-rows: auto auto; /* Dos filas de altura automática */
-    grid-template-columns: auto auto; /* Dos columnas de ancho automático */
+    grid-template-rows: auto auto;
+    /* Dos filas de altura automática */
+    grid-template-columns: auto auto;
+    /* Dos columnas de ancho automático */
     gap: 10px;
     margin-bottom: 1em;
 }
 
-#quiz h2, #quiz h3, #quiz-images h2, #quiz-images h3 {
+#quiz h2,
+#quiz h3,
+#quiz-images h2,
+#quiz-images h3 {
     color: #333
 }
 
@@ -244,50 +277,66 @@ input {
 }
 
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; 
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4); 
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
     color: #333;
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     background-color: #ceb4a3;
-    margin: 15% auto; 
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%; 
+    width: 50%;
     padding: 1em;
     border-radius: 10px;
     border: solid thick #30221d;
-  }
+}
 
-  .modal-content * {
+.modal-content * {
     color: #333;
-  }
-  
-  .close {
+}
+
+.close {
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
-  #description {
+#description {
     font-size: large;
-  }
+}
+
+.tier1 {
+    color: #55be58;
+}
+
+.tier2 {
+    color: #526bb4;
+}
+
+.tier3 {
+    color: #c258b3;
+}
+
+.tier4 {
+    color: #86811c;
+}
 
 @media screen and (max-width: 767px) {
 
@@ -297,8 +346,19 @@ input {
         min-height: 500px;
     }
 
+    main>h2 {
+        text-align: center;
+        width: 500px;
+        height: 58px;
+        background: url(/images/titleMobile.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: #333;
+        line-height: 50px;
+    }
+
     .modal-content {
-        width: 70%; 
-      }
-    
-  }
+        width: 70%;
+    }
+
+}

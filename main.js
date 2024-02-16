@@ -41,8 +41,10 @@ function addItem(item) {
         $("#icon").addClass(nuevoElemento.attr("class"))
         $("#id").text("Item ID: " + item.id)
         $("#name").text(item.name)
-        $("#pickup").text(item.pickup)
+        $("#pickup_modal").text(item.pickup)
         $("#quality").text("Tier: " + item.quality)
+        $("#quality").removeClass();
+        $("#quality").addClass("tier" + item.quality)
         $("#description").text(item.description)
     })
     if (item.dlc === "Afterbirth+")
@@ -183,7 +185,7 @@ $(document).ready(function(){
     $("#go-back").click(function() {
         $("#go-back").hide()
         $("#quiz").css("display", "none")
-        $("#quiz h3").remove()
+        $("#quiz h3:first-child").remove()
         $("#quiz div").remove()
         $("#quiz-images").css("display", "none")
         $("#images").empty()
@@ -193,7 +195,7 @@ $(document).ready(function(){
         $("#quiz-image").show()
         $(".tick").hide()
         $(".cross").hide()
-        $("main > h2").css("display", "none")
+        $("main h2").show()
     })
 });
 
