@@ -19,7 +19,7 @@ jobs:
         host: ${{ secrets.SSH_HOST }}
         user: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: ${{ secrets.SHH_PORT }}
+        port: ${{ secrets.SSH_PORT }}
         args: "-tt -vvv"
         command: |
             cd /var/www/html
