@@ -5,17 +5,17 @@ const rebirth_list = item_list.filter((item) => {return item.dlc === "Rebirth"})
 const afterebirth_list = item_list.filter((item) => {return item.dlc === "Afterbirth"})
 const afterebirth_plus_list = item_list.filter((item) => {return item.dlc === "Afterbirth+"})
 const repentance_list = item_list.filter((item) => {return item.dlc === "Repentance"})
-console.log("Total items: " + item_list.length)
+
 $("#rebirth-title").text("Rebirth (" + rebirth_list.length + ")")
 $("#afterbirth-title").text("Afterbirth (" + afterebirth_list.length + ")")
 $("#afterbirthplus-title").text("Afterbirth+ (" + afterebirth_plus_list.length + ")")
 $("#repentance-title").text("Repentance (" + repentance_list.length + ")")
 function addItem(item) {
-    var nuevoElemento = $("<div>");
-    var toolTip = $("<span>").text(item.name) 
+    let nuevoElemento = $("<div>");
+    let toolTip = $("<span>").text(item.name) 
     toolTip.addClass("tooltip-text")
     switch (item.dlc) {
-        case "Rebirth":
+        case "Rebirth": {
             let zeros = ""
             let id_string = item.id.toString()
             if (id_string.length === 1)
@@ -24,7 +24,7 @@ function addItem(item) {
                 zeros = "0"
             nuevoElemento.addClass("item reb-itm-new re-itm" + zeros + item.id);
             break;
-        case "Afterbirth":
+        } case "Afterbirth":
             nuevoElemento.addClass("ab-itm-new item abn-itm" + item.id);
             break;
         case "Afterbirth+":
@@ -220,9 +220,9 @@ function nextItem() {
 }
 
 function drawItem(item, location) {
-    var nuevoElemento = $("<div>");
+    let nuevoElemento = $("<div>");
     switch (item.dlc) {
-        case "Rebirth":
+        case "Rebirth": {
             let zeros = ""
             let id_string = item.id.toString()
             if (id_string.length === 1)
@@ -231,7 +231,7 @@ function drawItem(item, location) {
                 zeros = "0"
             nuevoElemento.addClass("item reb-itm-new re-itm" + zeros + item.id);
             break;
-        case "Afterbirth":
+        } case "Afterbirth":
             nuevoElemento.addClass("ab-itm-new item abn-itm" + item.id);
             break;
         case "Afterbirth+":
@@ -280,11 +280,11 @@ function containsId(items, id) {
 }
 
 function drawImage(item, location) {
-    var nuevoElemento = $("<a>");
+    let nuevoElemento = $("<a>");
     nuevoElemento.attr("id", item.id)
     nuevoElemento.addClass("image")
     switch (item.dlc) {
-        case "Rebirth":
+        case "Rebirth": {
             let zeros = ""
             let id_string = item.id.toString()
             if (id_string.length === 1)
@@ -293,7 +293,7 @@ function drawImage(item, location) {
                 zeros = "0"
             nuevoElemento.addClass("item reb-itm-new re-itm" + zeros + item.id);
             break;
-        case "Afterbirth":
+        } case "Afterbirth":
             nuevoElemento.addClass("ab-itm-new item abn-itm" + item.id);
             break;
         case "Afterbirth+":

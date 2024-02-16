@@ -19,7 +19,6 @@
 }
 
 body {
-    /*font-family: 'Space Mono', monospace;*/
     font-family: IsaacFont, Arial, sans-serif;
     color: white;
     background-image: url(https://foursouls.com/wp-content/uploads/2021/07/FourSoulsBackgroundStarLayer05.png), url(https://foursouls.com/wp-content/uploads/2021/07/FourSoulsBackgroundStarLayer04.png), url(https://foursouls.com/wp-content/uploads/2021/07/FourSoulsBackgroundStarLayer03.png), url(https://foursouls.com/wp-content/uploads/2021/07/FourSoulsBackgroundStarLayer02.png), url(https://foursouls.com/wp-content/uploads/2021/07/FourSoulsBackgroundStarLayer01.png), url(https://foursouls.com/wp-content/uploads/2021/07/FourSoulsBackground.png);
@@ -28,8 +27,6 @@ body {
 }
 
 main {
-    padding-left: 2em;
-    padding-right: 2em;
     max-width: 1024px;
     margin-right: auto;
     margin-left: auto;
@@ -290,6 +287,17 @@ input {
     color: #333;
 }
 
+.modal-content div {
+    margin-left: auto;
+    margin-right: auto;
+    animation: floatAnimation 3s infinite alternate;
+}
+
+.modal h2, .modal h3, .modal #id {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
 .modal-content {
     background-color: #ceb4a3;
     margin: 15% auto;
@@ -340,21 +348,22 @@ input {
     height: 62px;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-20px);
-  }
-}
-
-#questionmark:hover {
     cursor: pointer;
-    animation: bounce 0.5s infinite alternate;  /* Detiene la animación cuando el ratón está encima */
+    animation: floatAnimation 3s infinite alternate;
 }
+
+@keyframes floatAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
 
 #github img{
     width: 40px;
