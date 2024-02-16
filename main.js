@@ -125,7 +125,7 @@ $(document).ready(function(){
         $("#submit").show();
         $(".item").first().remove();
         $("#pickup").remove();
-        $("h3").remove();
+        $("#quiz h3").remove();
         $("#item_name").val('');
         $("#item_name").show();
         $("#item_name").focus();
@@ -137,7 +137,7 @@ $(document).ready(function(){
         $(".cross").hide();
         $("#next-images").hide();
         $("#images").empty();
-        $("h3").remove();
+        $("#quiz-images h3").remove();
         $("#item_name").val('');
         nextItems()
         $("#images a").click(function(){
