@@ -288,12 +288,15 @@ input {
 
 @media screen and (max-width: 767px) {
 
-   
-
     main {
         padding: 90px 20px 144px 20px;
         border-image-width: 156px 0px;
         min-height: 500px;
     }
+
+    .modal-content {
+        width: 70%; 
+      }
+    
   }
 
