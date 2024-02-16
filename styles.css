@@ -50,7 +50,7 @@ main>h2 {
     text-align: center;
     width: 500px;
     height: 58px;
-    background: url(/images/title.png);
+    background: url(./images/title.png);
     background-size: cover;
     background-repeat: no-repeat;
     color: #333;
@@ -350,7 +350,7 @@ input {
         text-align: center;
         width: 500px;
         height: 58px;
-        background: url(/images/titleMobile.png);
+        background: url(./images/titleMobile.png);
         background-size: cover;
         background-repeat: no-repeat;
         color: #333;
