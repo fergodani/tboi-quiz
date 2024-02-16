@@ -12,12 +12,16 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      
-    - name: Install SSH key
-      uses: webfactory/ssh-agent@v0.5.3
+
+    - name: Deploy over SSH
+      uses: fifsky/ssh-action@master
       with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-        
-    - name: Deploy to server
-      run: |
-        ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_IP }} -p ${{ secrets.SSH_PORT }} 'cd /var/www/html && sudo rm -r tboi-quiz && sudo git pull'
+        host: ${{ secrets.SSH_HOST }}
+        user: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: ${{ secrets.SHH_PORT }}
+        command: |
+            cd /var/www/html
+            sudo rm -r tboi-quiz
+            sudo git pull
+      
