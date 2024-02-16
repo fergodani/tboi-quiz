@@ -86,30 +86,14 @@ h3+p {
     border-bottom: 2px solid #333;
 }
 
-button {
-    cursor: pointer;
-    margin-top: 2em;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: 1.2em;
-    padding-bottom: 1.2em;
-    width: 200px;
-    /* Ancho del botón */
-    height: auto;
-    background-image: url(./images/buttonImage.png);
-    background-size: cover;
-    border: none;
-    color: #333;
-    font-size: large;
-    font-family: IsaacFont, Arial, sans-serif;
-}
+
 
 main>a,
 #quiz>a,
 #quiz-images>a {
     background-image: url(https://foursouls.com/wp-content/uploads/2021/07/PreviousLabel.png);
     color: #333;
-    font-size: large;
+    font-size: 20px;
     padding: 1% 2% 2% 2%;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
