@@ -20,10 +20,9 @@ jobs:
         user: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.SHH_PORT }}
+        args: "-tt"
         command: |
             cd /var/www/html
             sudo rm -r tboi-quiz
-            sudo git pull
-      env:
-        ACTIONS_STEP_DEBUG: true
+            sudo git clone https://github.com/fergodani/tboi-quiz.git
       
