@@ -24,4 +24,6 @@ jobs:
             cd /var/www/html
             sudo rm -r tboi-quiz
             sudo git pull
+      env:
+        ACTIONS_STEP_DEBUG: true
       
