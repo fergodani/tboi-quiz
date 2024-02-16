@@ -70,14 +70,17 @@ repentance_list.forEach((item) => {
 let isShowing = false
 $(document).ready(function(){
     let modal = $("#modal");
+    let modal_about = $("#modal-about");
 
     $(".close").click(function() {
         modal.css("display", "none");
+        modal_about.css("display", "none");
       });
 
     $(window).click(function(event) {
-        if (event.target == modal[0]) {
+        if (event.target == modal[0] || event.target == modal_about[0] ) {
           modal.css("display", "none");
+          modal_about.css("display", "none");
         }
       });
 
@@ -88,6 +91,10 @@ $(document).ready(function(){
             $("#next").click();
         }
     });
+
+    $("#questionmark").click(function() {
+        modal_about.css("display", "block")
+    })
 
     $("#mostrar-btn").click(function(){
         if (isShowing) {

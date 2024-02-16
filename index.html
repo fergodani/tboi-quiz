@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +15,11 @@
     <script type="module" src="./loadItems.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+
 <body>
-    <header><h1>The Binding of Isaac Quiz</h1></header>
+    <header>
+        <h1>The Binding of Isaac Quiz</h1>
+    </header>
     <main>
         <h2>Select the quiz</h2>
         <a id="quiz-name">Type the item name</a>
@@ -23,9 +27,9 @@
         <a id="go-back">Go back</a>
         <section id="quiz">
             <h2>Type the item name:</h2>
-            <input id="item_name" tipe="text" placeholder="Item name..."/>
+            <input id="item_name" tipe="text" placeholder="Item name..." />
             <a id="submit">OK</a>
-            <img class="tick" alt="tick" src="./images/tickPix.png"/>
+            <img class="tick" alt="tick" src="./images/tickPix.png" />
             <img class="cross" alt="cross" src="./images/crossPix.png" />
             <a id="next">Next</a>
             <div id="words">
@@ -34,7 +38,7 @@
         <section id="quiz-images">
             <h2>Select the correct item:</h2>
             <div id="images"></div>
-            <img class="tick" alt="tick" src="./images/tickPix.png"/>
+            <img class="tick" alt="tick" src="./images/tickPix.png" />
             <img class="cross" alt="cross" src="./images/crossPix.png" />
             <a id="next-images">Next</a>
         </section>
@@ -51,16 +55,34 @@
         </div>
         <div id="modal" class="modal">
             <div class="modal-content">
-              <span class="close">&times;</span>
-              <p id="id"></p><br>
-              <div id="icon"></div>
-              <h2 id="name"></h2>
-              <h3 id="pickup_modal"></h3>
-              <h3 id="quality"></h3>
-              <p id="description"></p>
+                <span class="close">&times;</span>
+                <p id="id"></p><br>
+                <div id="icon"></div>
+                <h2 id="name"></h2>
+                <h3 id="pickup_modal"></h3>
+                <h3 id="quality"></h3>
+                <p id="description"></p>
             </div>
-          </div>
+        </div>
+        <span id="questionmark"></span>
+        <div id="modal-about" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>About</h2>
+                <p>Hi! I'm Daniel Ferreira Gómez, an apasionate The Binding of Isaac player who want to do a cool side project. </p>
+                <p>This project start due to my need to play a Isaac quiz, so I decided to make my own.</p>
+                <p>This page is completly free and I don't want to make money with it. I bring this to the Isaac comunity :).</p>
+                <p>If you see something wrong or want to contribute you can send me an email at <strong>ferreiragomezdaniel@gmail.com</strong> or make a pull request at the github repository.</p>
+                <a id="github" href="https://github.com/fergodani/tboi-quiz" >
+                    <img src="./images/github.png" alt="github" />
+                </a>
+                <a id="email" href="mailto:ferreiragomezdaniel@gmail.com" >
+                    <img src="./images/email.png" alt="email" />
+                </a>
+            </div>
+        </div>
     </main>
     <footer>The Binding Of Isaac - All Rights Reserved</footer>
 </body>
+
 </html>

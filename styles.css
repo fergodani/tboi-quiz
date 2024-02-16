@@ -293,12 +293,11 @@ input {
 .modal-content {
     background-color: #ceb4a3;
     margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
     width: 50%;
     padding: 1em;
     border-radius: 10px;
     border: solid thick #30221d;
+    font-size: 20px;
 }
 
 .modal-content * {
@@ -318,10 +317,6 @@ input {
     cursor: pointer;
 }
 
-#description {
-    font-size: large;
-}
-
 .tier1 {
     color: #48a04b;
 }
@@ -336,6 +331,40 @@ input {
 
 .tier4 {
     color: #86811c;
+}
+
+#questionmark {
+    align-self:last baseline;
+    background-image: url(./images/questionmark.png);
+    width: 62px;
+    height: 62px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+#questionmark:hover {
+    cursor: pointer;
+    animation: bounce 0.5s infinite alternate;  /* Detiene la animación cuando el ratón está encima */
+}
+
+#github img{
+    width: 40px;
+    height: 40px;
+}
+
+#email img {
+    width: 40px;
+    height: 40px;
+    margin-left: 1em;
 }
 
 @media screen and (max-width: 767px) {
