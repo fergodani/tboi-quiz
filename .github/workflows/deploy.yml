@@ -20,7 +20,7 @@ jobs:
         user: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.SHH_PORT }}
-        args: "-tt"
+        args: "-tt -vvv"
         command: |
             cd /var/www/html
             sudo rm -r tboi-quiz
