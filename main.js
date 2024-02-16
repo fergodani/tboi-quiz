@@ -7,9 +7,9 @@ const afterebirth_plus_list = item_list.filter((item) => {return item.dlc === "A
 const repentance_list = item_list.filter((item) => {return item.dlc === "Repentance"})
 console.log("Total items: " + item_list.length)
 $("#rebirth-title").text("Rebirth (" + rebirth_list.length + ")")
-$("#afterbirth-title").text("Rebirth (" + afterebirth_list.length + ")")
-$("#afterbirthplus-title").text("Rebirth (" + afterebirth_plus_list.length + ")")
-$("#repentance-title").text("Rebirth (" + repentance_list.length + ")")
+$("#afterbirth-title").text("Afterbirth (" + afterebirth_list.length + ")")
+$("#afterbirthplus-title").text("Afterbirth+ (" + afterebirth_plus_list.length + ")")
+$("#repentance-title").text("Repentance (" + repentance_list.length + ")")
 function addItem(item) {
     var nuevoElemento = $("<div>");
     var toolTip = $("<span>").text(item.name) 
