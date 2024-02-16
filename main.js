@@ -35,6 +35,16 @@ function addItem(item) {
             break;
     }
     nuevoElemento.append(toolTip);
+    nuevoElemento.click(function () {
+        $("#modal").css("display", "block");
+        $("#icon").removeClass();
+        $("#icon").addClass(nuevoElemento.attr("class"))
+        $("#id").text("Item ID: " + item.id)
+        $("#name").text(item.name)
+        $("#pickup").text(item.pickup)
+        $("#quality").text("Tier: " + item.quality)
+        $("#description").text(item.description)
+    })
     if (item.dlc === "Afterbirth+")
         $(".Afterbirthplus").append(nuevoElemento);
     else
@@ -57,6 +67,17 @@ repentance_list.forEach((item) => {
 
 let isShowing = false
 $(document).ready(function(){
+    let modal = $("#modal");
+
+    $(".close").click(function() {
+        modal.css("display", "none");
+      });
+
+    $(window).click(function(event) {
+        if (event.target == modal[0]) {
+          modal.css("display", "none");
+        }
+      });
 
     $(document).keypress(function(event) {
         if (event.which === 13 && $("#submit").is(":visible")) {
