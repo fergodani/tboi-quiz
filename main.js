@@ -1,26 +1,16 @@
 import { item_list } from "./loadItems.js";
 import { trinket_list } from "./loadTrinkets.js";
-console.log(item_list)
+
 $(".items").hide();
 const rebirth_list = item_list.filter((item) => { return item.dlc === "Rebirth" })
 const afterebirth_list = item_list.filter((item) => { return item.dlc === "Afterbirth" })
 const afterebirth_plus_list = item_list.filter((item) => { return item.dlc === "Afterbirth+" })
 const repentance_list = item_list.filter((item) => { return item.dlc === "Repentance" })
 
-console.log(rebirth_list)
-console.log(afterebirth_list)
-console.log(afterebirth_plus_list)
-console.log(repentance_list)
-
 const rebirth_trinket_list = trinket_list.filter((trinket) => { return trinket.dlc === "Rebirth" })
 const afterebirth_trinket_list = trinket_list.filter((trinket) => { return trinket.dlc === "Afterbirth" })
 const afterebirth_trinket_plus_list = trinket_list.filter((trinket) => { return trinket.dlc === "Afterbirth+" })
 const repentance_trinket_list = trinket_list.filter((trinket) => { return trinket.dlc === "Repentance" })
-
-console.log(rebirth_trinket_list)
-console.log(afterebirth_trinket_list)
-console.log(afterebirth_trinket_plus_list)
-console.log(repentance_trinket_list)
 
 $("#rebirth-items-title").text("Rebirth items (" + rebirth_list.length + ")")
 let button = $("<button>").text("+")
@@ -143,7 +133,6 @@ function addItem(item) {
     }
     nuevoElemento.append(toolTip);
     nuevoElemento.click(function () {
-        console.log(item)
         $("#modal").css("display", "block");
         $("#icon").removeClass();
         $("#icon").addClass(nuevoElemento.attr("class"))
@@ -296,7 +285,6 @@ $(document).ready(function () {
         $("#item_name").val('');
         nextItems()
         $("#images a").click(function () {
-            console.log($(this).attr("id"))
             if ($(this).attr("id") === item_selected.id) {
                 $("#quiz-images .tick").show();
                 $("#quiz-images .cross").hide();
@@ -325,7 +313,6 @@ $(document).ready(function () {
         $("main > h2").css("display", "none")
         nextItems()
         $("#images a").click(function () {
-            console.log($(this).attr("id"))
             if ($(this).attr("id") === item_selected.id) {
                 $("#quiz-images .tick").show();
                 $("#quiz-images .cross").hide();
@@ -363,7 +350,6 @@ let item_selected
 function nextItem() {
     item_index = Math.floor(Math.random() * item_list.length);
     item_selected = item_list[item_index]
-    console.log(item_index)
     drawItem(item_selected, "#quiz h2")
 }
 
