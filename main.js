@@ -22,6 +22,7 @@ function addItem(item) {
                 zeros = "00"
             else if (id_string.length === 2)
                 zeros = "0"
+            
             nuevoElemento.addClass("item reb-itm-new re-itm" + zeros + item.id);
             break;
         } case "Afterbirth":
@@ -30,12 +31,18 @@ function addItem(item) {
         case "Afterbirth+":
             nuevoElemento.addClass("ap-itm-new item apn-itm" + item.id);
             break;
-        case "Repentance":
+        case "Repentance": {
+            if (item.id === '263') {
+                nuevoElemento.addClass("item reb-itm-new re-itm" + item.id);
+                break;
+            }
             nuevoElemento.addClass("item rep-item rep" + item.id);
             break;
+        }
     }
     nuevoElemento.append(toolTip);
     nuevoElemento.click(function () {
+        console.log(item)
         $("#modal").css("display", "block");
         $("#icon").removeClass();
         $("#icon").addClass(nuevoElemento.attr("class"))
@@ -45,7 +52,13 @@ function addItem(item) {
         $("#quality").text("Tier: " + item.quality)
         $("#quality").removeClass();
         $("#quality").addClass("tier" + item.quality)
-        $("#description").text(item.description)
+        $(".description").remove()
+        for (let i = item.description.length; i >= 0; i--) {
+            let p_text = $("<p>")
+            p_text.addClass("description")
+            p_text.text(item.description[i])
+            $("#quality").after([p_text])
+        }
     })
     if (item.dlc === "Afterbirth+")
         $(".Afterbirthplus").append(nuevoElemento);
