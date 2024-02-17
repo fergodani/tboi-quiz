@@ -1,18 +1,104 @@
 import { item_list } from "./loadItems.js";
-
+import { trinket_list } from "./loadTrinkets.js";
+console.log(item_list)
 $(".items").hide();
-const rebirth_list = item_list.filter((item) => {return item.dlc === "Rebirth"})
-const afterebirth_list = item_list.filter((item) => {return item.dlc === "Afterbirth"})
-const afterebirth_plus_list = item_list.filter((item) => {return item.dlc === "Afterbirth+"})
-const repentance_list = item_list.filter((item) => {return item.dlc === "Repentance"})
+const rebirth_list = item_list.filter((item) => { return item.dlc === "Rebirth" })
+const afterebirth_list = item_list.filter((item) => { return item.dlc === "Afterbirth" })
+const afterebirth_plus_list = item_list.filter((item) => { return item.dlc === "Afterbirth+" })
+const repentance_list = item_list.filter((item) => { return item.dlc === "Repentance" })
 
-$("#rebirth-title").text("Rebirth (" + rebirth_list.length + ")")
-$("#afterbirth-title").text("Afterbirth (" + afterebirth_list.length + ")")
-$("#afterbirthplus-title").text("Afterbirth+ (" + afterebirth_plus_list.length + ")")
-$("#repentance-title").text("Repentance (" + repentance_list.length + ")")
+console.log(rebirth_list)
+console.log(afterebirth_list)
+console.log(afterebirth_plus_list)
+console.log(repentance_list)
+
+const rebirth_trinket_list = trinket_list.filter((trinket) => { return trinket.dlc === "Rebirth" })
+const afterebirth_trinket_list = trinket_list.filter((trinket) => { return trinket.dlc === "Afterbirth" })
+const afterebirth_trinket_plus_list = trinket_list.filter((trinket) => { return trinket.dlc === "Afterbirth+" })
+const repentance_trinket_list = trinket_list.filter((trinket) => { return trinket.dlc === "Repentance" })
+
+console.log(rebirth_trinket_list)
+console.log(afterebirth_trinket_list)
+console.log(afterebirth_trinket_plus_list)
+console.log(repentance_trinket_list)
+
+$("#rebirth-items-title").text("Rebirth items (" + rebirth_list.length + ")")
+let button = $("<button>").text("+")
+button.attr("id", "show-rebirth-items")
+button.click(function() {
+    showHideItems(this, ".Rebirth-items")
+})
+$("#rebirth-items-title").append(button)
+
+$("#afterbirth-items-title").text("Afterbirth items (" + afterebirth_list.length + ")")
+button = $("<button>").text("+")
+button.attr("id", "show-afterbirth-items")
+button.click(function() {
+    showHideItems(this, ".Afterbirth-items")
+})
+$("#afterbirth-items-title").append(button)
+
+$("#afterbirthplus-items-title").text("Afterbirth+ items (" + afterebirth_plus_list.length + ")")
+button = $("<button>").text("+")
+button.attr("id", "show-afterbirthplus-items")
+button.click(function() {
+    showHideItems(this, ".Afterbirthplus-items")
+})
+$("#afterbirthplus-items-title").append(button)
+
+$("#repentance-items-title").text("Repentance items (" + repentance_list.length + ")")
+button = $("<button>").text("+")
+button.attr("id", "show-repentance-items")
+button.click(function() {
+    showHideItems(this, ".Repentance-items")
+})
+$("#repentance-items-title").append(button)
+
+$("#rebirth-trinkets-title").text("Rebirth trinkets (" + rebirth_trinket_list.length + ")")
+button = $("<button>").text("+")
+button.attr("id", "show-rebirth-trinkets")
+button.click(function() {
+    showHideItems(this, ".Rebirth-trinkets")
+})
+$("#rebirth-trinkets-title").append(button)
+
+$("#afterbirth-trinkets-title").text("Afterbirth trinkets (" + afterebirth_trinket_list.length + ")")
+button = $("<button>").text("+")
+button.attr("id", "show-afterbirth-trinkets")
+button.click(function() {
+    showHideItems(this, ".Afterbirth-trinkets")
+})
+$("#afterbirth-trinkets-title").append(button)
+
+$("#afterbirthplus-trinkets-title").text("Afterbirth+ trinkets (" + afterebirth_trinket_plus_list.length + ")")
+button = $("<button>").text("+")
+button.attr("id", "show-afterbirthplus-trinkets")
+button.click(function() {
+    showHideItems(this, ".Afterbirthplus-trinkets")
+})
+$("#afterbirthplus-trinkets-title").append(button)
+
+$("#repentance-trinkets-title").text("Repentance trinkets (" + repentance_trinket_list.length + ")")
+button = $("<button>").text("+")
+button.attr("id", "show-repentance-trinkets")
+button.click(function() {
+    showHideItems(this, ".Repentance-trinkets")
+})
+$("#repentance-trinkets-title").append(button)
+
+function showHideItems(button, value) {
+    if ($(button).text() === '+'){
+        $(button).text("-")
+        $(value).hide()
+    } else {
+        $(button).text("+")
+        $(value).show()
+    }
+}
+
 function addItem(item) {
     let nuevoElemento = $("<div>");
-    let toolTip = $("<span>").text(item.name) 
+    let toolTip = $("<span>").text(item.name)
     toolTip.addClass("tooltip-text")
     switch (item.dlc) {
         case "Rebirth": {
@@ -22,16 +108,31 @@ function addItem(item) {
                 zeros = "00"
             else if (id_string.length === 2)
                 zeros = "0"
-            
-            nuevoElemento.addClass("item reb-itm-new re-itm" + zeros + item.id);
+            if (item.isTrinket) {
+                nuevoElemento.addClass("item trinket trinket" + getNumWithZeros(item.id.toString()));
+                break;
+            }
+            nuevoElemento.addClass("item reb-itm-new re-itm" + getNumWithZeros(item.id.toString()));
             break;
         } case "Afterbirth":
+            if (item.isTrinket) {
+                nuevoElemento.addClass("item trinket trinket" + getNumWithZeros(item.id.toString()));
+                break;
+            }
             nuevoElemento.addClass("ab-itm-new item abn-itm" + item.id);
             break;
         case "Afterbirth+":
+            if (item.isTrinket) {
+                nuevoElemento.addClass("item trinket trinket" + getNumWithZeros(item.id.toString()));
+                break;
+            }
             nuevoElemento.addClass("ap-itm-new item apn-itm" + item.id);
             break;
         case "Repentance": {
+            if (item.isTrinket) {
+                nuevoElemento.addClass("item rep-item rep-trink rep-junxx" + item.id);
+                break;
+            }
             if (item.id === '263') {
                 nuevoElemento.addClass("item reb-itm-new re-itm" + item.id);
                 break;
@@ -60,12 +161,33 @@ function addItem(item) {
             $("#quality").after([p_text])
         }
     })
-    if (item.dlc === "Afterbirth+")
-        $(".Afterbirthplus").append(nuevoElemento);
-    else
-        $("." + item.dlc).append(nuevoElemento);
+    if (item.isTrinket) {
+        if (item.dlc === "Afterbirth+")
+            $(".Afterbirthplus-trinkets").append(nuevoElemento);
+        else
+            $("." + item.dlc + "-trinkets").append(nuevoElemento);
+    } else {
+        if (item.dlc === "Afterbirth+")
+            $(".Afterbirthplus-items").append(nuevoElemento);
+        else
+            $("." + item.dlc + "-items").append(nuevoElemento);
+    }
 }
+
+function getNumWithZeros(num) {
+    let zeros = ""
+    if (num.length === 1)
+        zeros = "00"
+    else if (num.length === 2)
+        zeros = "0"
+    return zeros + num
+}
+
 rebirth_list.forEach((item) => {
+    addItem(item)
+})
+
+rebirth_trinket_list.forEach((item) => {
     addItem(item)
 })
 
@@ -73,31 +195,44 @@ afterebirth_list.forEach((item) => {
     addItem(item)
 })
 
+afterebirth_trinket_list.forEach((item) => {
+    addItem(item)
+})
+
 afterebirth_plus_list.forEach((item) => {
     addItem(item)
 })
+
+afterebirth_trinket_plus_list.forEach((item) => {
+    addItem(item)
+})
+
 repentance_list.forEach((item) => {
     addItem(item)
 })
 
+repentance_trinket_list.forEach((item) => {
+    addItem(item)
+})
+
 let isShowing = false
-$(document).ready(function(){
+$(document).ready(function () {
     let modal = $("#modal");
     let modal_about = $("#modal-about");
 
-    $(".close").click(function() {
+    $(".close").click(function () {
         modal.css("display", "none");
         modal_about.css("display", "none");
-      });
+    });
 
-    $(window).click(function(event) {
-        if (event.target == modal[0] || event.target == modal_about[0] ) {
-          modal.css("display", "none");
-          modal_about.css("display", "none");
+    $(window).click(function (event) {
+        if (event.target == modal[0] || event.target == modal_about[0]) {
+            modal.css("display", "none");
+            modal_about.css("display", "none");
         }
-      });
+    });
 
-    $(document).keypress(function(event) {
+    $(document).keypress(function (event) {
         if (event.which === 13 && $("#submit").is(":visible")) {
             $("#submit").click();
         } else if (event.which === 13 && $("#submit").is(":hidden")) {
@@ -105,11 +240,11 @@ $(document).ready(function(){
         }
     });
 
-    $("#questionmark").click(function() {
+    $("#questionmark").click(function () {
         modal_about.css("display", "block")
     })
 
-    $("#mostrar-btn").click(function(){
+    $("#mostrar-btn").click(function () {
         if (isShowing) {
             $(".items").css("display", "none")
         } else {
@@ -118,7 +253,7 @@ $(document).ready(function(){
         isShowing = !isShowing
     });
 
-    $("#submit").click(function(){
+    $("#submit").click(function () {
         $("#item_name").hide();
         let input_text = $("#item_name").val();
         let real_name = $("<h3>").text(item_selected.name)
@@ -138,7 +273,7 @@ $(document).ready(function(){
         $("#submit").hide();
     });
 
-    $("#next").click(function(){
+    $("#next").click(function () {
         $(".tick").hide();
         $(".cross").hide();
         $("#next").hide();
@@ -152,7 +287,7 @@ $(document).ready(function(){
         nextItem()
     });
 
-    $("#next-images").click(function(){
+    $("#next-images").click(function () {
         $(".tick").hide();
         $(".cross").hide();
         $("#next-images").hide();
@@ -160,7 +295,7 @@ $(document).ready(function(){
         $("#quiz-images h3").remove();
         $("#item_name").val('');
         nextItems()
-        $("#images a").click(function(){
+        $("#images a").click(function () {
             console.log($(this).attr("id"))
             if ($(this).attr("id") === item_selected.id) {
                 $("#quiz-images .tick").show();
@@ -173,7 +308,7 @@ $(document).ready(function(){
         })
     });
 
-    $("#quiz-name").click(function(){
+    $("#quiz-name").click(function () {
         $("#go-back").show()
         $("#quiz").css("display", "flex")
         $("#quiz-name").css("display", "none")
@@ -182,14 +317,14 @@ $(document).ready(function(){
         nextItem()
     });
 
-    $("#quiz-image").click(function(){
+    $("#quiz-image").click(function () {
         $("#go-back").show()
         $("#quiz-images").css("display", "flex")
         $("#quiz-name").css("display", "none")
         $("#quiz-image").css("display", "none")
-        $("main > h2").css("display", "none") 
+        $("main > h2").css("display", "none")
         nextItems()
-        $("#images a").click(function(){
+        $("#images a").click(function () {
             console.log($(this).attr("id"))
             if ($(this).attr("id") === item_selected.id) {
                 $("#quiz-images .tick").show();
@@ -201,8 +336,8 @@ $(document).ready(function(){
             $("#next-images").show();
         })
     });
-    
-    $("#go-back").click(function() {
+
+    $("#go-back").click(function () {
         $("#go-back").hide()
         $("#quiz").css("display", "none")
         $("#quiz h3:first-child").remove()
@@ -268,7 +403,7 @@ function nextItems() {
     let item;
     let items = []
     items.push(item_selected)
-    
+
     for (let i = 0; i < 3; i++) {
         index = Math.floor(Math.random() * item_list.length);
         while (index == Number(index_aux))
@@ -321,4 +456,4 @@ function drawImage(item, location) {
 
 function comparacionAleatoria() {
     return Math.random() - 0.5;
-  }
+}
