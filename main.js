@@ -235,8 +235,10 @@ $(document).ready(function () {
 
     $("#mostrar-btn").click(function () {
         if (isShowing) {
+            $(this).text("Show items")
             $(".items").css("display", "none")
         } else {
+            $(this).text("Hide items")
             $(".items").css("display", "flex")
         }
         isShowing = !isShowing
